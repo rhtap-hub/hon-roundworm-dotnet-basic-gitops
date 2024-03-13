@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  rhtap/gitops: hon-roundworm-dotnet-basic 
+  janus-idp.io/tekton: hon-roundworm-dotnet-basic
+  backstage.io/kubernetes-id: hon-roundworm-dotnet-basic
+  backstage.io/kubernetes-namespace: rhtap-demo 
+  app.kubernetes.io/part-of: hon-roundworm-dotnet-basic
+resources: 
+- application-dev.yaml 
+- application-stage.yaml 
+- application-prod.yaml  

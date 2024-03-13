@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hon-roundworm-dotnet-basic-gitops
+  description: This is GitOps manifest for hon-roundworm-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: hon-roundworm-dotnet-basic
+    janus-idp.io/tekton: hon-roundworm-dotnet-basic 
+    backstage.io/kubernetes-id: hon-roundworm-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hon-roundworm-dotnet-basic
